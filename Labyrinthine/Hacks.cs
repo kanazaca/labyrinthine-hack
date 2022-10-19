@@ -1,4 +1,6 @@
 ﻿using System;
+using UnityEngine;
+using ValkoGames.Labyrinthine.Store;
 
 namespace Labyrinthine
 {
@@ -9,16 +11,19 @@ namespace Labyrinthine
             SpeedHack();
         }
 
-        private static void SpeedHack()
+        public static void SpeedHack()
         {
-            if(CheatToggles.SpeedHackEnabled)
-            {
+            if(CheatToggles.SpeedHackEnabled) {
                 Main.PlayerControl.CurrentPlayerControlPreset.MovementSpeed = 15f;
             }
-            else
-            {
+            else {
                 Main.PlayerControl.CurrentPlayerControlPreset.MovementSpeed = 4f;
             }
+        }
+
+        public static void UlimitedCurrency()
+        {
+            CurrencyManager.AddCurrency(99999, false);
         }
     }
 }

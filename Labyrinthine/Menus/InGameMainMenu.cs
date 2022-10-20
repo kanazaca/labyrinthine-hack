@@ -13,20 +13,26 @@ namespace Labyrinthine.Menus
         {
             SetDefaultWindowColors();
 
-            if (GUI.Button(new Rect(20f, 35f, 127f, 23f), new GUIContent($"{(CheatToggles.SpeedHackEnabled ? "Disable" : "Enable")} Speed Hack"), GUIStyle))
+            if (GUI.Button(new Rect(20f, 35f, 130f, 25f), new GUIContent($"{(CheatToggles.SpeedHackEnabled ? "Disable" : "Enable")} Speed Hack"), GUIStyle))
             {
                 CheatToggles.SpeedHackEnabled = !CheatToggles.SpeedHackEnabled;
                 Hacks.SpeedHack();
             }
-            if (GUI.Button(new Rect(20f, 61f, 127f, 23f), new GUIContent($"{(CheatToggles.ESPEnabled ? "Disable" : "Enable")} ESP"), GUIStyle))
+            if (GUI.Button(new Rect(20f, 65f, 130f, 25f), new GUIContent($"{(CheatToggles.ESPEnabled ? "Disable" : "Enable")} ESP"), GUIStyle))
             {
                 CheatToggles.ESPEnabled = !CheatToggles.ESPEnabled;
             }
             
-            if (GUI.Button(new Rect(20f, 90f, 127f, 23f), new GUIContent($"{(CheatToggles.SunEnabled ? "Disable" : "Enable")} Sun Light"), GUIStyle))
+            if (GUI.Button(new Rect(20f, 95f, 130f, 25f), new GUIContent($"{(CheatToggles.SunEnabled ? "Disable" : "Enable")} Sun Light"), GUIStyle))
             {
                 CheatToggles.SunEnabled = !CheatToggles.SunEnabled;
                 SunLight.SetActive(CheatToggles.SunEnabled);
+            }
+            
+            if (GUI.Button(new Rect(20f, 120f, 130f, 25f), new GUIContent($"{(CheatToggles.DumbAIEnabled ? "Disable" : "Enable")} Dumb AI"), GUIStyle))
+            {
+                CheatToggles.DumbAIEnabled = !CheatToggles.DumbAIEnabled;
+                DumbAI.Toggle(CheatToggles.DumbAIEnabled);
             }
 
             GUI.color = Color.white;

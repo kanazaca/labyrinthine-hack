@@ -22,6 +22,12 @@ namespace Labyrinthine.Menus
             {
                 CheatToggles.ESPEnabled = !CheatToggles.ESPEnabled;
             }
+            
+            if (GUI.Button(new Rect(20f, 90f, 127f, 23f), new GUIContent($"{(CheatToggles.SunEnabled ? "Disable" : "Enable")} Sun Light"), GUIStyle))
+            {
+                CheatToggles.SunEnabled = !CheatToggles.SunEnabled;
+                SunLight.SetActive(CheatToggles.SunEnabled);
+            }
 
             GUI.color = Color.white;
             GUI.Label(new Rect(10f, 205f, 1000f, 23f), "Tooltip: " + GUI.tooltip);

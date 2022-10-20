@@ -97,6 +97,7 @@ namespace Labyrinthine
             LobbyMenu.Enabled = false;
             CheatToggles.ESPEnabled = false;
             CheatToggles.SpeedHackEnabled = false;
+            CheatToggles.SunEnabled = false;
         }
 
         IEnumerator CollectGameObjects()

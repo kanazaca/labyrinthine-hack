@@ -18,16 +18,15 @@ namespace Labyrinthine.Menus
             }
 
             GUI.color = Color.white;
-            GUI.Label(new Rect(10f, 205f, 1000f, 23f), "Tooltip: " + GUI.tooltip);
             GUI.DragWindow(new Rect(0f, 0f, 10000f, 20f));
         }
 
         private static void SetDefaultWindowColors()
         {
+            GUI.backgroundColor = Color.white;
             GUIStyle.fontSize = 16;
             GUIStyle.normal.textColor = new Color(0.207f, 0.733f, 0.243f, 1f);
             GUIStyle.alignment = TextAnchor.MiddleCenter;
-            GUI.backgroundColor = Color.white;
         }
     }    
 }

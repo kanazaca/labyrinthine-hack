@@ -64,6 +64,8 @@ namespace Labyrinthine
                     InGameMainMenu.Enabled = !InGameMainMenu.Enabled;
                 }
             }
+
+            Hacks.Listen();
         }
 
         public override void OnGUI()
@@ -81,6 +83,11 @@ namespace Labyrinthine
             if (InGameMainMenu.Enabled)
             {
                 InGameMainMenu.MenuRect = GUI.Window(1, InGameMainMenu.MenuRect, (GUI.WindowFunction)InGameMainMenu.Render, "~ Labyrinthine Hack ~");
+
+                if (TeleportMenu.Enabled)
+                {
+                    TeleportMenu.MenuRect = GUI.Window(2, TeleportMenu.MenuRect, (GUI.WindowFunction)(TeleportMenu.Render), "~ Teleport Menu ~");
+                }
             }
 
             if(CheatToggles.ESPEnabled)

@@ -36,6 +36,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\dlls\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="BehaviorDesigner.Runtime">
+      <HintPath>..\dlls\BehaviorDesigner.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\dlls\Il2Cppmscorlib.dll</HintPath>
     </Reference>
@@ -65,6 +68,9 @@
     <Reference Include="UnityEngine.InputLegacyModule">
       <HintPath>..\dlls\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\dlls\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>..\dlls\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
@@ -74,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheatToggles.cs" />
+    <Compile Include="DumbAI.cs" />
     <Compile Include="ESP.cs" />
     <Compile Include="Hacks.cs" />
     <Compile Include="Main.cs" />

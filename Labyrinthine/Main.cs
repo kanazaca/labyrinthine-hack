@@ -20,6 +20,7 @@ namespace Labyrinthine
         public static GameManager GameManager { get; set; }
         public static PlayerControl PlayerControl { get; set; }
         public static AIController[] AIControllers { get; set; }
+        public static KeyPuzzle KeyPuzzle { get; set; }
 
         public override void OnInitializeMelon()
         {
@@ -115,6 +116,9 @@ namespace Labyrinthine
             yield return new WaitForSeconds(0.15f);
 
             AIControllers = GameObject.FindObjectsOfType<AIController>().ToArray();
+            yield return new WaitForSeconds(0.15f);
+
+            KeyPuzzle = GameObject.FindObjectOfType<KeyPuzzle>();
             yield return new WaitForSeconds(0.15f);
         }
     }

@@ -15,9 +15,17 @@ namespace Labyrinthine.Menus
             // COL-1
             GUI.Label(new Rect(30f, 15f, 100f, 50f), "Players", GUIStyle);
 
-            if (GUI.Button(new Rect(32f, 65f, 127f, 23f), new GUIContent(Main.PlayerControl.playerNetworkSync.playerName)))
+            foreach(var player in Main.GameManager.AlivePlayers)
             {
-                // TODO, because need to test with more players in game
+                if (Main.PlayerControl.playerNetworkSync.playerName == player.playerName)
+                {
+                    continue;
+                }
+
+                if (GUI.Button(new Rect(32f, 65f, 127f, 23f), new GUIContent(player.playerName)))
+                {
+                    Main.PlayerControl.playerNetworkSync.MoveToTransform(player.transform);
+                }
             }
 
             // COL-2

@@ -57,8 +57,8 @@ namespace Labyrinthine.Menus
                     var transform = ai.transform;
                     transform.position = new Vector3(
                         transform.position.x,
-                        transform.position.y,
-                        transform.position.z - 4f // to fix some stuck/fall into the ground
+                        transform.position.y + 4f, // to fix some stuck/fall into the ground
+                        transform.position.z
                     );
 
                     Main.PlayerControl.playerNetworkSync.MoveToTransform(ai.transform);

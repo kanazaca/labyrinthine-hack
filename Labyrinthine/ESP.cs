@@ -12,24 +12,37 @@ namespace Labyrinthine
         {
             RenderMonsters();
             RenderPlayers();
+            RenderKeyPuzzle();
+        }
+
+        private static void RenderKeyPuzzle()
+        {
+            foreach (var key in Main.KeyPuzzle.keys)
+            {
+                if(key == null)
+                {
+                    continue;
+                }
+
+                Drawing.TextWithDistance(key.transform, key.name);
+            }
+
+            foreach (var keyLock in Main.KeyPuzzle.locks)
+            {
+                if(keyLock == null)
+                {
+                    continue;
+                }
+
+                Drawing.TextWithDistance(keyLock.transform, keyLock.name);
+            }
         }
 
         private static void RenderPlayers()
         {
             foreach (var player in Main.GameManager.Players)
             {
-                Vector3 position = player.transform.position;
-                Vector3 vector = GameCamera.WorldToScreenPoint(position);
-
-                if ((vector.x < 0f || vector.x > (float)Screen.width || vector.y < 0f || vector.y > (float)Screen.height || vector.z > 0f))
-                {
-                    float distanceToMonster = (float)Math.Round((double)Vector3.Distance(Main.PlayerControl.transform.position, player.transform.position), 1);
-
-                    if (vector.z >= 0f && distanceToMonster < 125f)
-                    {
-                        Drawing.DrawString(new Vector2(vector.x, (float)Screen.height - vector.y), player.playerName + " [" + distanceToMonster.ToString() + "m]", Color.cyan, 12, true);
-                    }
-                }
+                Drawing.TextWithDistance(player.transform, player.playerName);
             }
         }
 
@@ -37,18 +50,7 @@ namespace Labyrinthine
         {
             foreach (var ai in Main.AIControllers)
             {
-                Vector3 position = ai.transform.position;
-                Vector3 vector = GameCamera.WorldToScreenPoint(position);
-
-                if ((vector.x < 0f || vector.x > (float)Screen.width || vector.y < 0f || vector.y > (float)Screen.height || vector.z > 0f))
-                {
-                    float distanceToMonster = (float)Math.Round((double)Vector3.Distance(Main.PlayerControl.transform.position, ai.transform.position), 1);
-
-                    if (vector.z >= 0f && distanceToMonster < 125f)
-                    {
-                        Drawing.DrawString(new Vector2(vector.x, (float)Screen.height - vector.y), ai.monsterType.ToString() + " [" + distanceToMonster.ToString() + "m]", Color.cyan, 12, true);
-                    }
-                }
+                Drawing.TextWithDistance(ai.transform, ai.monsterType.ToString());
             }
         }
     }

@@ -11,6 +11,26 @@ namespace Labyrinthine
         public static void Render()
         {
             RenderMonsters();
+            RenderPlayers();
+        }
+
+        private static void RenderPlayers()
+        {
+            foreach (var player in Main.GameManager.Players)
+            {
+                Vector3 position = player.transform.position;
+                Vector3 vector = GameCamera.WorldToScreenPoint(position);
+
+                if ((vector.x < 0f || vector.x > (float)Screen.width || vector.y < 0f || vector.y > (float)Screen.height || vector.z > 0f))
+                {
+                    float distanceToMonster = (float)Math.Round((double)Vector3.Distance(Main.PlayerControl.transform.position, player.transform.position), 1);
+
+                    if (vector.z >= 0f && distanceToMonster < 125f)
+                    {
+                        Drawing.DrawString(new Vector2(vector.x, (float)Screen.height - vector.y), player.playerName + " [" + distanceToMonster.ToString() + "m]", Color.cyan, 12, true);
+                    }
+                }
+            }
         }
 
         private static void RenderMonsters()

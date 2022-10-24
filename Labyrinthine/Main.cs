@@ -17,6 +17,7 @@ namespace Labyrinthine
         private static object coRoutine;
 
         // Game Objects
+        public static GameManager GameManager { get; set; }
         public static PlayerControl PlayerControl { get; set; }
         public static AIController[] AIControllers { get; set; }
 
@@ -93,8 +94,6 @@ namespace Labyrinthine
             if(CheatToggles.ESPEnabled)
             {
                 ESP.Render();
-
-                LoggerInstance.Msg($"We have {AIControllers.Count()} monsters");
             }
         }
 
@@ -109,6 +108,9 @@ namespace Labyrinthine
 
         IEnumerator CollectGameObjects()
         {
+            GameManager = GameObject.FindObjectOfType<GameManager>();
+            yield return new WaitForSeconds(0.15f);
+
             PlayerControl = GameObject.FindObjectOfType<PlayerControl>();
             yield return new WaitForSeconds(0.15f);
 

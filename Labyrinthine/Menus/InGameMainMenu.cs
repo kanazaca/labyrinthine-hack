@@ -1,8 +1,4 @@
-﻿using Dynamite3D.RealIvy;
-using MelonLoader;
-using System.Linq;
-using UnityEngine;
-using static ValkoGames.Labyrinthine.Cases.Objects.IntersectionActivator;
+﻿using UnityEngine;
 
 namespace Labyrinthine.Menus
 {
@@ -54,9 +50,7 @@ namespace Labyrinthine.Menus
             Hacks.FlashlightMultiplier = GUI.HorizontalSlider(new Rect(157f, 57f, 128f, 20f), Hacks.FlashlightMultiplier, 1f, 500f);
 
             GUI.Label(new Rect(160f, 74f, 130f, 20f), new GUIContent("Speed Hack"));
-            Main.PlayerControl.CurrentPlayerControlPreset.MovementSpeed = GUI.HorizontalSlider(new Rect(157f, 96f, 128f, 20f), Main.PlayerControl.CurrentPlayerControlPreset.MovementSpeed, 4f, 50f);
-
-            
+            Main.PlayerControl.CurrentPlayerControlPreset.MovementSpeed = GUI.HorizontalSlider(new Rect(157f, 96f, 128f, 20f), Main.PlayerControl.CurrentPlayerControlPreset.MovementSpeed, 4f, 20f);  
         }
 
         private static void SetDefaultWindowColors()

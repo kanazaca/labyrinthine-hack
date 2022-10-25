@@ -105,11 +105,5 @@
     <Compile Include="SunLight.cs" />
     <Compile Include="Utilities\Drawing.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="docs" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

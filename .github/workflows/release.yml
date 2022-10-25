@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "feat/github-actions-release" ]
   pull_request:
     branches: [ "main" ]
 

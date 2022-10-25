@@ -44,6 +44,9 @@ Download and install [MelonLoader](https://melonwiki.xyz/#/?id=manual-installati
 
 ## How To Use
 
+> !!! Tested on game version `Build 28092022` !!!
+
+
 To show and hide the cheat menu press <kbd>F7</kbd>. The menu is only available in the `Lobby` and in `Levels`
 
 Lobby:
